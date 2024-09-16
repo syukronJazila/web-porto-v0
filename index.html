@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Syukron Jazila</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        @font-face{
+            font-family: 'poppins';
+            src: url(poppins/Poppins-SemiBold.ttf);
+        }
+        @font-face {
+            font-family: 'Viga';
+            src: url(https://fonts.googleapis.com/css?family=Viga);
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins';
+        }
+        body{
+            background-color:rgb(41,8,26);
+            color: #acacbc;
+        }
+        header{
+            position:fixed;
+            top:0;
+            left: 0;
+            width: 100%;
+            padding: 10px ;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23acacbc"%3e%3cpath d="M4 6h16v2H4zm0 4h16v2H4zm0 4h16v2H4z" /%3e%3c/svg%3e');
+        }
+
+        #nama{
+            font-size: 20px;
+            color: #acacbc;
+            margin-left: 8vw;
+        }
+        #navigation{
+            display: flex;
+            align-items: center;
+            margin-right: 120px;
+        
+        }
+        #navigation a{
+            font-size: 15px;
+            text-decoration: none;
+            color: #acacbc;
+            display: block;
+            padding: 15px;
+            margin-right: 35px;
+        }
+        #navigation a:hover,
+        #navigation a#aktif {
+            color: 	#a4a484;
+        }
+        main{
+            min-height: 100vh; /* Mengatur tinggi elemen main sesuai dengan tinggi viewport */
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+            margin-left: 10vw; 
+        }
+        #konten{
+            max-width: 40vw;
+            margin-top: 7vh;
+        }
+        #konten h1{
+            font-size: 40px;
+        }
+        #konten h2{
+            font-size: 25px;
+            font-weight: 700;
+            color: #a4a484;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        #konten p{
+            font-size: 15px;
+            text-align: justify;
+        }
+        #top-img{
+            display: none;
+        }
+        #bottom-img{
+            display: block;
+            margin-left: 15vw;
+        }
+        .container{
+            display: flex;
+            justify-content: center; 
+            align-items: center;   
+        }
+
+        #hobi{
+            min-height: 100vh;
+        }
+
+        .content-car{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: fit-content;
+        }
+
+        .carousel-item img {
+            width: auto;
+            height: 70vh;
+            left: 50%; /* Posisi horizontal dari tengah kontainer */
+            top: 50%;
+        }
+
+        .carousel-item h2 {
+            position: absolute;  
+            left: 50%;
+            transform: translateX(-50%); /* Centers horizontally */
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5); 
+            padding: 10px; 
+            bottom: 0;
+        }
+
+        .judul{
+            display: flex;
+            justify-content: center;
+            color: #a4a484;
+            margin-bottom: 5vh;
+        }
+
+        #jadwal-kuliah{
+            min-height: 100vh;
+            margin-top: 5vh;
+            margin-bottom: 10vh;
+            width: auto; 
+        }
+
+        .root-table{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2vh;
+        }
+
+        #motto{
+            min-height: 50vh;
+            width: auto; 
+        }
+
+        .motto-cont p{
+            font-size: 1.4em;
+            text-align: center;
+            font-weight: 200;
+            font-style: italic;
+            margin-bottom: 30px;
+            font-family: Viga;
+        }
+
+        #jadwal-kuliah .judul, #motto .motto-cont {
+            text-align: center; /* Menyelaraskan teks di tengah */
+            padding: 20px; /* Memberikan padding untuk spasi tambahan */
+        }
+
+        .table{
+            width: 60vw;
+        }
+
+        #footer{
+            background-color:rgb(34, 32, 33) ;
+            min-height: fit-content;
+            padding: 1em;
+        }
+        #img-cont{
+            display: flex;
+            justify-content:center;
+            align-items: center;
+        }
+        #center{
+            margin-right: 3vw;
+            margin-left: 3vw;
+        }
+
+        .gambar-f{
+            height: 50px;
+            width: auto;
+        }
+
+        #hobi-rpl{
+            min-height: 3vh;
+        }
+
+        .nav-item a{
+            color: #acacbc;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding-top: 10vh; /* Sesuaikan padding di perangkat dengan lebar layar kecil */
+                display:grid;
+                margin-left: 4vw;
+                margin-right: 4vw;
+                min-height: 100vh;
+            }
+            .table{
+                width: 80vw;
+            }
+            #konten{
+                max-width: 100vw;
+                margin-top: 7vh;
+                text-align: center;
+            }
+            #nama{
+                margin-left: 2vw;
+            }
+            #top-img{
+                display: block;
+            }
+            #bottom-img{
+                display: none;
+            }
+            #centerit{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 5%;
+                margin-top: 5%;
+            }
+            #hobi{
+                height: fit-content;
+                margin-top: 12vh;
+            }
+            .carousel-item img {
+                width: auto;
+                height: 65vh;
+            }
+            #jadwal-kuliah{
+                min-height: 100vh;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(57, 30, 46);">
+            <a class="navbar-brand" href="#beranda" style="color: #acacbc; margin-left: 5vw;">Syukron.</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#beranda" id="aktif">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hobi-rpl">Hobi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#jadwal-kuliah">Jadwal Kuliah</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#motto">Motto Hidup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    </header>
+    <main id="beranda">
+        <div id="konten">
+            <h1 style="text-align: start;"> Hai, aku Muhammad Syukron Jazila</h1>
+            <div id="centerit">
+                <img id="top-img" src="gambar/foto.png" style="width:15em"/>
+            </div>
+            <h2>Calon Frontend Developer</h2>
+            <p>Saya adalah Mahasiswa Ilmu Komputer di Universitas Sumatera Utara (USU) dengan Nim 231401007 Kom A Stambuk 2023. 
+                Saat ini, saya berada dalam tahap pembelajaran pemrograman, khususnya dalam pengembangan situs web menggunakan HTML, CSS, dan JavaScript.
+            </p>
+        </div>
+
+        <img id="bottom-img" src="gambar/foto.png" style="width:15em;"/>
+    </main>
+
+    <div id="hobi-rpl"></div>
+
+    <div id="hobi">
+        <div class="judul">
+            <h1>Hobi</h1>
+        </div>
+    
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            
+            <div class="carousel-inner">
+                <div class="carousel-item active justify-content-center">
+                    <div class="content-car">
+                        <img class="d-block img-fluid" src="gambar/ngoding.jpg" alt="First slide">
+                        <h2>Ngoding</h2>
+                    </div>
+                </div>
+                <div class="carousel-item align-middle justify-content-center">
+                    <div class="content-car">
+                        <img class="d-block img-fluid align-middle" src="gambar/medsos.jpg" alt="Second slide">
+                        <h2>Main Medsos</h2>
+                    </div>
+                </div>
+                <div class="carousel-item" >
+                    <div class="content-car">
+                        <img class="d-block img-fluid" src="gambar/swimming.png" alt="Third slide">
+                        <h2>Berenang</h2>
+                    </div>   
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div id="jadwal-kuliah">
+        <div class="judul">
+            <h1>Jadwal Kuliah</h1>
+        </div>
+    
+        <div class="root-table">
+            <table class="table">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Matkul</th>
+                    <th scope="col">Jadwal</th>
+                    <th scope="col">Ruangan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Wirahusaha Digital</td>
+                    <td>Jumat, 08:00 - 09:40</td>
+                    <td>D-104</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Basis Data</td>
+                    <td>Rabu, 14:40 - 17:10</td>
+                    <td>D-103</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Praktikum Basis Data</td>
+                    <td>Jumat, 13:50 - 15:30</td>
+                    <td>Lab 3</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Praktikum Struktur Data</td>
+                    <td>Senin, 10:30 - 12:10</td>
+                    <td>Lab 2</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Struktur Data</td>
+                    <td>Kamis, 10:30 - 13:00</td>
+                    <td>D-101</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>Praktikum Pemrograman Web</td>
+                    <td>Kamis, 15:30 - 17:10</td>
+                    <td>Lab 3</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>Pemrograman Web</td>
+                    <td>Rabu, 08:00 - 10:30</td>
+                    <td>D-103</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>Etika Profesi</td>
+                    <td>Kamis, 08:00 - 09:40</td>
+                    <td>D-104</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">9</th>
+                    <td>Linguistik Forensik</td>
+                    <td>Selasa, 10:30 - 12:10</td>
+                    <td>H-104</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td>Basic English Grammar</td>
+                    <td>Selasa, 08:00 - 09:40</td>
+                    <td>D-102</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">11</th>
+                    <td>Kecerdasan Buatan</td>
+                    <td>Rabu, 10:30 - 13:00</td>
+                    <td>D-103</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <div id="motto">
+        <div class="judul" style="margin-bottom: 1vh;">
+            <h1>Motto Hidup</h1>
+        </div>
+        <div class="motto-cont">
+            <p>"Fokus untuk bertumbuh sedikit demi sedikit setiap harinya. Ingat! Sesedikit apapun progres kita, yang namanya progres itu tetap progres"</p>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="judul">
+            <h1 style="color: #acacbc; font-size:30px;">Kontak</h1>
+        </div>
+        <div id="img-cont">
+            <a href="https://github.com/syukronJazila"><img class="gambar-f" src="gambar/nb-gthb.png" alt=""></a>
+            <a href="https://wa.me/628973267766" id="center"><img class="gambar-f" src="gambar/nb-wa.png" alt=""></a>
+            <a href="https://www.instagram.com/syukronjazila12"><img class="gambar-f" src="gambar/nb-ig.png" alt=""></a>
+        </div>
+    </footer>
+           
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+      <!-- Popper.js (dibutuhkan untuk elemen-elemen seperti dropdown) -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+      
+      <!-- Bootstrap JS -->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
